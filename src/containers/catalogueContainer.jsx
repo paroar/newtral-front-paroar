@@ -1,4 +1,6 @@
+/* eslint-disable no-underscore-dangle */
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Catalogue } from '../components';
 
 const CatalogueContainer = () => {
@@ -24,18 +26,19 @@ const CatalogueContainer = () => {
     : (
       <Catalogue>
         {politicians.map((item) => (
-          // eslint-disable-next-line no-underscore-dangle
-          <Catalogue.Item key={item._id}>
-            <Catalogue.Image src={item.GENERO === 'Mujer' ? '/images/woman.png' : '/images/man.png'} alt="" />
-            <Catalogue.Info>
-              <Catalogue.Title>{item.TITULAR}</Catalogue.Title>
-              <Catalogue.Text>{item.PARTIDO}</Catalogue.Text>
-              <Catalogue.Text>
-                {item.SUELDOBASE_SUELDO}
-                €
-              </Catalogue.Text>
-            </Catalogue.Info>
-          </Catalogue.Item>
+          <Link to={`/details/${item._id}`}>
+            <Catalogue.Item key={item._id}>
+              <Catalogue.Image src={item.GENERO === 'Mujer' ? '/images/woman.png' : '/images/man.png'} alt="" />
+              <Catalogue.Info>
+                <Catalogue.Title>{item.TITULAR}</Catalogue.Title>
+                <Catalogue.Text>{item.PARTIDO}</Catalogue.Text>
+                <Catalogue.Text>
+                  {item.SUELDOBASE_SUELDO}
+                  €
+                </Catalogue.Text>
+              </Catalogue.Info>
+            </Catalogue.Item>
+          </Link>
         ))}
       </Catalogue>
     ));
