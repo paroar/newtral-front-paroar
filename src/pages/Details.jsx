@@ -1,8 +1,12 @@
 import React from 'react';
+import { GoBack } from '../components';
 import PoliticianContainer from '../containers/politicianContainer';
 
 const Details = () => (
-  <PoliticianContainer />
+  <>
+    <GoBack to="/" />
+    <PoliticianContainer />
+  </>
 );
 
 export default Details;
