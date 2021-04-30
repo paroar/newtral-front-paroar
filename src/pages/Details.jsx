@@ -1,7 +1,8 @@
 import React from 'react';
+import PoliticianContainer from '../containers/politicianContainer';
 
 const Details = () => (
-  <h1>Hello Details</h1>
+  <PoliticianContainer />
 );
 
 export default Details;
