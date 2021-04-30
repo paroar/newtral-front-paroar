@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Catalogue } from '../components';
+import Loading from '../components/loading';
 
 const CatalogueContainer = () => {
   const [politicians, setPoliticians] = useState([]);
@@ -22,7 +23,7 @@ const CatalogueContainer = () => {
   }, []);
 
   return (isLoading
-    ? <img src="/images/loading.gif" alt="loading" />
+    ? <Loading />
     : (
       <Catalogue>
         {politicians.map((item) => (

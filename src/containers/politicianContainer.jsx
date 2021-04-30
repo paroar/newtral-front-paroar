@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Details } from '../components';
+import Loading from '../components/loading';
 import AccordionContainer from './accordionContainer';
 
 const PoliticianContainer = () => {
@@ -25,7 +26,7 @@ const PoliticianContainer = () => {
   }, []);
 
   return (isLoading
-    ? <img src="/images/loading.gif" alt="loading" />
+    ? <Loading />
     : (
       <>
         <Details>
