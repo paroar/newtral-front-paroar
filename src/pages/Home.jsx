@@ -1,7 +1,8 @@
 import React from 'react';
+import CatalogueContainer from '../containers/catalogueContainer';
 
 const Home = () => (
-  <h1>Hello Home</h1>
+  <CatalogueContainer />
 );
 
 export default Home;
