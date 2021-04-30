@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Details } from '../components';
@@ -31,6 +32,9 @@ const PoliticianContainer = () => {
           <Details.Frame>
             <Details.Image src={politician.GENERO === 'Mujer' ? '/images/woman.png' : '/images/man.png'} alt="politician" />
             <AccordionContainer data={politician} />
+          </Details.Frame>
+          <Details.Frame>
+            <Details.Actions id={politician._id} />
           </Details.Frame>
         </Details>
       </>
