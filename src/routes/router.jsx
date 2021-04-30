@@ -6,8 +6,8 @@ import { Home, Update, Details } from '../pages';
 const Router = () => (
   <BrowserRouter>
     <Route exact path={HOME} component={Home} />
-    <Route exact path={UPDATE} component={Update} />
-    <Route exact path={DETAILS} component={Details} />
+    <Route exact path={`${UPDATE}/:id`} component={Update} />
+    <Route exact path={`${DETAILS}/:id`} component={Details} />
   </BrowserRouter>
 );
 
