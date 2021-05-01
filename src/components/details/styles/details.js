@@ -1,5 +1,7 @@
 import styled from 'styled-components/macro';
-import { medium, large, xlarge } from '../../../constants/viewport';
+import {
+  small, medium, large, xlarge,
+} from '../../../constants/viewport';
 
 export const Container = styled.div`
     display: flex;
@@ -8,18 +10,22 @@ export const Container = styled.div`
 `;
 
 export const Frame = styled.div`
-    padding: 3rem;
+    padding: 5rem 1rem;
     
+    @media (min-width: ${small}){
+        padding: 5rem 5rem;
+    }
+
     @media (min-width: ${medium}){
-        padding: 10rem;
+        padding: 5rem 10rem;
     }
 
     @media (min-width: ${large}){
-        padding: 15rem;
+        padding: 5rem 15rem;
     }
 
     @media (min-width: ${xlarge}){
-        padding: 20rem;
+        padding: 5rem 20rem;
     }
 `;
 

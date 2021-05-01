@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useParams, useHistory } from 'react-router-dom';
 import Loading from '../components/loading';
-import { Accordion } from '../components';
+import { Accordion, Form } from '../components';
 import { dictionary } from '../constants/csv_dictionary';
 
 const FormContainer = () => {
@@ -50,26 +50,29 @@ const FormContainer = () => {
   return (isLoading
     ? <Loading />
     : (
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <Accordion>
-          {Object.entries(politician).map((item) => ((item[0] === '_id')
-            ? null
-            : (
-              <Accordion.Item key={item[0]}>
-                <Accordion.Header>{dictionary[item[0]]}</Accordion.Header>
-                <Accordion.Body>
-                  <input
-                    {...register(item[0], { required: true })}
-                    placeholder={dictionary[item[0]]}
-                    defaultValue={item[1]}
-                  />
-                </Accordion.Body>
-              </Accordion.Item>
-            )))}
-        </Accordion>
-
-        <input type="submit" value="Editar" />
-      </form>
+      <Form>
+        <Form.Frame>
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <Accordion>
+              {Object.entries(politician).map((item) => ((item[0] === '_id')
+                ? null
+                : (
+                  <Accordion.Item key={item[0]}>
+                    <Accordion.Header>{dictionary[item[0]]}</Accordion.Header>
+                    <Accordion.Body>
+                      <input
+                        {...register(item[0], { required: true })}
+                        placeholder={dictionary[item[0]]}
+                        defaultValue={item[1]}
+                      />
+                    </Accordion.Body>
+                  </Accordion.Item>
+                )))}
+            </Accordion>
+            <Form.Submit />
+          </form>
+        </Form.Frame>
+      </Form>
     ));
 };
 
