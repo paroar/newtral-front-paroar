@@ -33,3 +33,25 @@ export const Button = styled(Link)`
         filter: brightness(0);
     }
 `;
+
+export const TextLink = styled(Link)`
+    background-color:transparent;
+    border: 1px solid black;
+    font-size: 20px;
+    width:100%;
+    padding: .6rem 0;
+    cursor: pointer;
+    background-color: #000000;
+    color: #ffffff;
+    text-transform: uppercase;
+    text-decoration:none;
+    text-align: center;
+    letter-spacing: .05rem;
+
+    @media (min-width: ${small}){
+        font-size: 24px;
+    }
+
+    @media (min-width: ${medium}){
+        font-size: 30px;
+    }`;

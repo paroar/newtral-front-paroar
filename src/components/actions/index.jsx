@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Container, Button } from './styles/actions';
+import { Container, Button, TextLink } from './styles/actions';
 
 const Actions = ({ children }) => (
   <Container>
@@ -26,4 +26,17 @@ Actions.Button.propTypes = {
   to: PropTypes.string.isRequired,
   src: PropTypes.string.isRequired,
   alt: PropTypes.string.isRequired,
+};
+
+Actions.TextLink = ({
+  to, children,
+}) => (
+  <TextLink to={to}>
+    {children}
+  </TextLink>
+);
+
+Actions.TextLink.propTypes = {
+  children: PropTypes.node.isRequired,
+  to: PropTypes.string.isRequired,
 };

@@ -42,23 +42,23 @@ export const Input = styled.input`
 export const Submit = styled.input`
     background-color:transparent;
     border: 1px solid black;
-    font-size: 14px;
+    font-size: 20px;
     width:100%;
     padding: .6rem 0;
     margin-top: 2rem;
     cursor: pointer;
     background-color: #000000;
     color: #ffffff;
-    font-weight: bold;
     text-transform: uppercase;
-
+    letter-spacing: .05rem;
+    text-align:center;
 
     @media (min-width: ${small}){
-        font-size: 18px;
+        font-size: 24px;
     }
 
     @media (min-width: ${medium}){
-        font-size: 24px;
+        font-size: 30px;
     }
 
 `;

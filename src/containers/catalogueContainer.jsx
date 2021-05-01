@@ -10,7 +10,6 @@ const CatalogueContainer = () => {
   const [politicians, setPoliticians] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const { page, setPageLimit } = useContext(PaginationContext);
-
   useEffect(() => {
     async function fetchData() {
       try {
@@ -30,6 +29,9 @@ const CatalogueContainer = () => {
     ? <Loading />
     : (
       <>
+        <Actions>
+          <Actions.TextLink>Crear</Actions.TextLink>
+        </Actions>
         <Pagination>
           <Pagination.Page />
         </Pagination>
@@ -43,7 +45,6 @@ const CatalogueContainer = () => {
                 </Catalogue.Info>
                 <Actions>
                   <Actions.Button to={`/update/${item._id}`} src="/images/icons/edit.png" alt="edit" />
-                  <Actions.Button to="" src="/images/icons/delete.png" alt="delete" />
                 </Actions>
               </Catalogue.Item>
             </Catalogue.ButtonLink>
