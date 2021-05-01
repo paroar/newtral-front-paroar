@@ -1,12 +1,26 @@
 import styled from 'styled-components/macro';
+import { medium, large, xlarge } from '../../../constants/viewport';
 
 export const Container = styled.div`
     display: flex;
     flex-direction: column;
+
 `;
 
 export const Frame = styled.div`
-    padding: 2rem;
+    padding: 3rem;
+    
+    @media (min-width: ${medium}){
+        padding: 10rem;
+    }
+
+    @media (min-width: ${large}){
+        padding: 15rem;
+    }
+
+    @media (min-width: ${xlarge}){
+        padding: 20rem;
+    }
 `;
 
 export const Image = styled.img`

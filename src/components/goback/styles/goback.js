@@ -6,10 +6,10 @@ export const Container = styled.div`
     align-items:center;
     position: absolute;
     border-radius: 10rem;
-    margin: 1rem;
+    margin: 1.1rem .6rem;
 `;
 
 export const Image = styled.img`
-    width: 40px;
-    height: 40px;
+    width: 24px;
+    height: 24px;
 `;

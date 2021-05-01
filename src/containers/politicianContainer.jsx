@@ -31,7 +31,6 @@ const PoliticianContainer = () => {
       <>
         <Details>
           <Details.Frame>
-            <Details.Image src={politician.GENERO === 'Mujer' ? '/images/woman.png' : '/images/man.png'} alt="politician" />
             <AccordionContainer data={politician} />
           </Details.Frame>
         </Details>
