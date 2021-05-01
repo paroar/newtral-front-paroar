@@ -37,7 +37,7 @@ const CatalogueContainer = () => {
         </Pagination>
         <Catalogue>
           {politicians.map((item) => (
-            <Catalogue.ButtonLink to={`/details/${item._id}`}>
+            <Catalogue.ButtonLink to={`/details/${item._id}`} key={item._id}>
               <Catalogue.Item key={item._id}>
                 <Catalogue.Info>
                   <Catalogue.Image src={item.GENERO === 'Mujer' ? '/images/woman.png' : '/images/man.png'} alt="" />

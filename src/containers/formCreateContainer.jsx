@@ -1,11 +1,13 @@
+/* eslint-disable no-underscore-dangle */
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import { useHistory } from 'react-router-dom';
 import { Accordion, Form } from '../components';
 import { dictionary } from '../constants/csv_dictionary';
 
 const FormCreateContainer = () => {
-  //   const history = useHistory();
+  const history = useHistory();
 
   const {
     register, handleSubmit,
@@ -21,9 +23,9 @@ const FormCreateContainer = () => {
         },
         body: JSON.stringify(data),
       });
-      const json = res.json();
+      const json = await res.json();
       console.log(json);
-    //   history.push(`/details/${id}`);
+      history.push(`/details/${json._id}`);
     } catch (error) {
       console.log(error);
     }
@@ -34,16 +36,16 @@ const FormCreateContainer = () => {
     <Form>
       <Form.Frame>
         <form onSubmit={handleSubmit(onSubmit)}>
-          {Object.entries(dictionary).map((item) => (
-            <Accordion>
-              <Accordion.Item>
+          <Accordion>
+            {Object.entries(dictionary).map((item) => (
+              <Accordion.Item key={item[0]}>
                 <Accordion.Header>{item[1]}</Accordion.Header>
                 <Accordion.Body>
                   <input {...register(item[0], { required: true })} />
                 </Accordion.Body>
               </Accordion.Item>
-            </Accordion>
-          ))}
+            ))}
+          </Accordion>
           <Form.Submit value="Crear" />
         </form>
       </Form.Frame>

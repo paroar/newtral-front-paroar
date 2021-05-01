@@ -13,7 +13,7 @@ const AccordionContainer = ({ data }) => {
       {entries.map((item) => (filter.includes(item[0])
         ? null
         : (
-          <Accordion.Item>
+          <Accordion.Item key={item[0]}>
             <Accordion.Header>{dictionary[item[0]]}</Accordion.Header>
             <Accordion.Body>{(item[1] === null && 'Sin datos') || item[1]}</Accordion.Body>
           </Accordion.Item>
