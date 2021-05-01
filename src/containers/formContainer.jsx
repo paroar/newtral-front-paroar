@@ -54,7 +54,7 @@ const FormContainer = () => {
         <Form.Frame>
           <form onSubmit={handleSubmit(onSubmit)}>
             <Accordion>
-              {Object.entries(politician).map((item) => ((item[0] === '_id')
+              {Object.entries(politician).map((item) => ((item[0] === '_id' || item[0] === '__v')
                 ? null
                 : (
                   <Accordion.Item key={item[0]}>

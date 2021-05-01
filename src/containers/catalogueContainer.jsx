@@ -30,7 +30,7 @@ const CatalogueContainer = () => {
     : (
       <>
         <Actions>
-          <Actions.TextLink>Crear</Actions.TextLink>
+          <Actions.TextLink to="/create">Crear</Actions.TextLink>
         </Actions>
         <Pagination>
           <Pagination.Page />
