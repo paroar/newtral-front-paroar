@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
-  Container, Item, Image, Info, Title, Text,
+  Container, Item, Image, Info, Title, Text, ButtonLink,
 } from './styles/catalogue';
 
 const Catalogue = ({ children }) => (
@@ -43,4 +43,11 @@ Catalogue.Text = ({ children }) => <Text>{children}</Text>;
 
 Catalogue.Text.propTypes = {
   children: PropTypes.node.isRequired,
+};
+
+Catalogue.ButtonLink = ({ children, to }) => <ButtonLink to={to}>{children}</ButtonLink>;
+
+Catalogue.ButtonLink.propTypes = {
+  children: PropTypes.node.isRequired,
+  to: PropTypes.string.isRequired,
 };

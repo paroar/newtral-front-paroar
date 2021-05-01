@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components/macro';
 
 export const Container = styled.div`
@@ -23,20 +24,12 @@ export const Info = styled.div`
 export const Item = styled.div`
     cursor: pointer;
     position: relative;
-    background-color: rgba(0,0,0,.2);
     margin-bottom: 1px;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
 
-    &:nth-child(even){
-        background-color: rgba(0,0,0,.3);
-    }
-
-    & > a {
-        text-decoration: none;
-    }
-
-    &:hover{
-        background-color: rgba(0,0,0,.4);
-    }
+    
 `;
 
 export const Title = styled.h1`
@@ -46,4 +39,18 @@ export const Title = styled.h1`
 export const Text = styled.p`
     font-size: 18px;
     font-weight: bold;
+`;
+
+export const ButtonLink = styled(Link)`
+    text-decoration: none;
+    background-color: rgba(0,0,0,.2);
+    margin-bottom: .1rem;
+
+    &:nth-child(even){
+        background-color: rgba(0,0,0,.3);
+    }
+
+    &:hover{
+        background-color: rgba(0,0,0,.4);
+    }
 `;

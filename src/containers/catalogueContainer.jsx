@@ -1,7 +1,6 @@
 /* eslint-disable no-underscore-dangle */
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { Catalogue } from '../components';
+import { Catalogue, Actions } from '../components';
 import Loading from '../components/loading';
 
 const CatalogueContainer = () => {
@@ -27,14 +26,18 @@ const CatalogueContainer = () => {
     : (
       <Catalogue>
         {politicians.map((item) => (
-          <Catalogue.Item key={item._id}>
-            <Link to={`/details/${item._id}`}>
+          <Catalogue.ButtonLink to={`/details/${item._id}`}>
+            <Catalogue.Item key={item._id}>
               <Catalogue.Info>
                 <Catalogue.Image src={item.GENERO === 'Mujer' ? '/images/woman.png' : '/images/man.png'} alt="" />
                 <Catalogue.Title>{item.TITULAR}</Catalogue.Title>
               </Catalogue.Info>
-            </Link>
-          </Catalogue.Item>
+              <Actions>
+                <Actions.Button to={`/update/${item._id}`} src="/images/icons/edit.png" alt="edit" />
+                <Actions.Button to="" src="/images/icons/delete.png" alt="delete" />
+              </Actions>
+            </Catalogue.Item>
+          </Catalogue.ButtonLink>
         ))}
       </Catalogue>
     ));
