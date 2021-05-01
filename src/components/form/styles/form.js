@@ -40,7 +40,6 @@ export const Input = styled.input`
 `;
 
 export const Submit = styled.input`
-    background-color:transparent;
     border: 1px solid black;
     font-size: 20px;
     width:100%;
@@ -52,7 +51,8 @@ export const Submit = styled.input`
     text-transform: uppercase;
     letter-spacing: .05rem;
     text-align:center;
-
+    transition: all .3s;
+    
     @media (min-width: ${small}){
         font-size: 24px;
     }
@@ -61,4 +61,8 @@ export const Submit = styled.input`
         font-size: 30px;
     }
 
+    &:hover{
+        background-color: #ffffff;
+        color: #000000;
+    }
 `;

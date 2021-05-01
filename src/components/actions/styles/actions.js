@@ -9,6 +9,7 @@ export const Container = styled.div`
 
 export const Button = styled(Link)`
     display:flex;
+    transition: all .3s;
 
     & > img {
         width: 24px;
@@ -30,12 +31,11 @@ export const Button = styled(Link)`
     }
 
     &:hover{
-        filter: brightness(0);
+        filter: brightness(0) invert(1);
     }
 `;
 
 export const TextLink = styled(Link)`
-    background-color:transparent;
     border: 1px solid black;
     font-size: 20px;
     width:100%;
@@ -47,6 +47,7 @@ export const TextLink = styled(Link)`
     text-decoration:none;
     text-align: center;
     letter-spacing: .05rem;
+    transition: all .3s;
 
     @media (min-width: ${small}){
         font-size: 24px;
@@ -54,4 +55,10 @@ export const TextLink = styled(Link)`
 
     @media (min-width: ${medium}){
         font-size: 30px;
-    }`;
+    }
+
+    &:hover{
+        background-color: #ffffff;
+        color: #000000;
+    }
+`;
