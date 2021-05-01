@@ -1,8 +1,12 @@
 import React from 'react';
 import CatalogueContainer from '../containers/catalogueContainer';
+import { PaginationContextProvider } from '../contexts/paginaitonContext';
 
 const Home = () => (
-  <CatalogueContainer />
+  <PaginationContextProvider>
+    <CatalogueContainer />
+  </PaginationContextProvider>
+
 );
 
 export default Home;

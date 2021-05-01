@@ -1,25 +1,30 @@
 /* eslint-disable no-underscore-dangle */
-import React, { useState, useEffect } from 'react';
+import React, {
+  useState, useEffect, useContext,
+} from 'react';
 import { Catalogue, Actions, Pagination } from '../components';
 import Loading from '../components/loading';
+import { PaginationContext } from '../contexts/paginaitonContext';
 
 const CatalogueContainer = () => {
   const [politicians, setPoliticians] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const { page, setPageLimit } = useContext(PaginationContext);
 
   useEffect(() => {
     async function fetchData() {
       try {
-        const res = await fetch(process.env.REACT_APP_SERVER_URL);
+        const res = await fetch(`${process.env.REACT_APP_SERVER_URL}?page=${page}`);
         const json = await res.json();
-        setPoliticians(json);
+        setPoliticians(json.politicians);
+        setPageLimit(json.totalPages);
         setIsLoading(false);
       } catch (error) {
         console.error(error);
       }
     }
     fetchData();
-  }, []);
+  }, [page]);
 
   return (isLoading
     ? <Loading />
@@ -42,8 +47,7 @@ const CatalogueContainer = () => {
           ))}
         </Catalogue>
         <Pagination>
-          <Pagination.ButtonLink to="" src="/images/icons/previous.png" alt="previous" />
-          <Pagination.ButtonLink to="" src="/images/icons/next.png" alt="next" />
+          <Pagination.Page />
         </Pagination>
       </>
     ));
