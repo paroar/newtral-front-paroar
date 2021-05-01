@@ -30,6 +30,9 @@ const CatalogueContainer = () => {
     ? <Loading />
     : (
       <>
+        <Pagination>
+          <Pagination.Page />
+        </Pagination>
         <Catalogue>
           {politicians.map((item) => (
             <Catalogue.ButtonLink to={`/details/${item._id}`}>
