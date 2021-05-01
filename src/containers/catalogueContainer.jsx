@@ -27,19 +27,14 @@ const CatalogueContainer = () => {
     : (
       <Catalogue>
         {politicians.map((item) => (
-          <Link to={`/details/${item._id}`}>
-            <Catalogue.Item key={item._id}>
-              <Catalogue.Image src={item.GENERO === 'Mujer' ? '/images/woman.png' : '/images/man.png'} alt="" />
+          <Catalogue.Item key={item._id}>
+            <Link to={`/details/${item._id}`}>
               <Catalogue.Info>
+                <Catalogue.Image src={item.GENERO === 'Mujer' ? '/images/woman.png' : '/images/man.png'} alt="" />
                 <Catalogue.Title>{item.TITULAR}</Catalogue.Title>
-                <Catalogue.Text>{item.PARTIDO}</Catalogue.Text>
-                <Catalogue.Text>
-                  {item.SUELDOBASE_SUELDO}
-                  €
-                </Catalogue.Text>
               </Catalogue.Info>
-            </Catalogue.Item>
-          </Link>
+            </Link>
+          </Catalogue.Item>
         ))}
       </Catalogue>
     ));

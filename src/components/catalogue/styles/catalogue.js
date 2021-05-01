@@ -6,28 +6,36 @@ export const Container = styled.div`
 `;
 
 export const Image = styled.img`
-    width: 100%;
-    height: auto;
+    width: 48px;
+    height: 48px;
+    border-radius:50rem;
+    margin: 0 1rem;
 `;
 
 export const Info = styled.div`
-    background-color: rgba(0,0,0,.8);
     color: #ffffff;
-    position: absolute;
-    bottom:0;
-    right:0;
-    left:0;
-    display: none;
-    text-align: center;
+    display: flex;
+    align-items:center;
+
+
 `;
 
 export const Item = styled.div`
     cursor: pointer;
     position: relative;
+    background-color: rgba(0,0,0,.2);
+    margin-bottom: 1px;
 
-    &:hover ${Info}{
-        display: block;
-        z-index: 100;
+    &:nth-child(even){
+        background-color: rgba(0,0,0,.3);
+    }
+
+    & > a {
+        text-decoration: none;
+    }
+
+    &:hover{
+        background-color: rgba(0,0,0,.4);
     }
 `;
 
