@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 import {
-  Container, Frame, Image, Info, Actions,
+  Container, Frame, Image, Info,
 } from './styles/details';
 
 const Details = ({ children }) => <Container>{children}</Container>;
@@ -36,19 +35,4 @@ Details.Info = ({ children }) => (
 
 Details.Info.propTypes = {
   children: PropTypes.node.isRequired,
-};
-
-Details.Actions = ({ id }) => (
-  <Actions>
-    <Link to={`/update/${id}`}>
-      <img src="/images/icons/edit.png" alt="edit" />
-    </Link>
-    <Link to={`/delete/${id}`}>
-      <img src="/images/icons/delete.png" alt="delete" />
-    </Link>
-  </Actions>
-);
-
-Details.Actions.propTypes = {
-  id: PropTypes.string.isRequired,
 };

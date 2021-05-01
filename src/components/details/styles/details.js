@@ -16,14 +16,3 @@ export const Image = styled.img`
 `;
 
 export const Info = styled.div``;
-
-export const Actions = styled.div`
-    display: flex;
-    justify-content: space-around;
-
-    & > a > img {
-        width: 40px;
-        height: 40px;
-        cursor: pointer;
-    }
-`;
