@@ -1,7 +1,8 @@
 import React from 'react';
+import FormContainer from '../containers/formContainer';
 
 const Update = () => (
-  <h1>Hello Update</h1>
+  <FormContainer />
 );
 
 export default Update;
